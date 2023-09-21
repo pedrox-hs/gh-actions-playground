@@ -1,0 +1,17 @@
+name: On PR
+
+on:
+  pull_request:
+    branches: [ '**' ]
+
+jobs:
+  on-pr:
+    name: run-on-pr
+    runs-on: ubuntu-latest
+    steps:
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: |
+        echo "$GITHUB_CONTEXT"
+    
