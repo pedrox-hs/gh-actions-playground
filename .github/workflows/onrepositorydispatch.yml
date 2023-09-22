@@ -1,0 +1,15 @@
+name: On Repository Dispatch
+
+on:
+  repository_dispatch:
+
+jobs:
+  on-repository-dispatch:
+    name: run-on-repository-dispatch
+    runs-on: ubuntu-latest
+    steps:
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: |
+        echo "$GITHUB_CONTEXT"
