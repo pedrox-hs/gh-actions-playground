@@ -1,0 +1,16 @@
+name: On Check Run
+
+on:
+  check_run:
+    types: [created, rerequested, completed, requested_action]
+
+jobs:
+  on-check-run:
+    name: run-on-check-run
+    runs-on: ubuntu-latest
+    steps:
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: |
+        echo "$GITHUB_CONTEXT"
