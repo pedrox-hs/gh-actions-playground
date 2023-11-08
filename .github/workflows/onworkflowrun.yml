@@ -2,7 +2,7 @@ name: On Workflow Run
 
 on:
   workflow_run:
-    workflows: [ On Push ]
+    workflows: [ On PR ]
 
 jobs:
   on-workflow-run:
@@ -14,3 +14,8 @@ jobs:
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: |
         echo "$GITHUB_CONTEXT"
+
+  on-workflow-call:
+    uses: pedrox-hs/gh-actions-playground/.github/workflows/onworkflowcall.yml@main
+    with:
+      test_value: ${{ github.event.workflow_run.repository }}
