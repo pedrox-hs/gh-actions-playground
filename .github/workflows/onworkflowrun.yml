@@ -18,4 +18,4 @@ jobs:
   on-workflow-call:
     uses: pedrox-hs/gh-actions-playground/.github/workflows/onworkflowcall.yml@main
     with:
-      test_value: ${{ toJSON(github.event.workflow_run.repository) }}
+      test_value: ${{ toJson(github.event.workflow_run.repository) }}
