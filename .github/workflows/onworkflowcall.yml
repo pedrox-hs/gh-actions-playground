@@ -24,5 +24,6 @@ jobs:
     steps:
     - uses: actions/github-script@v6
       with:
+        test_value: ${{ inputs.test_value }}
         script: |
           github.log.info('test_value: ' + core.getInput('test_value'))
