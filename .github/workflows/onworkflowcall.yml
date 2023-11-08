@@ -25,6 +25,7 @@ jobs:
     - uses: actions/github-script@v6
       with:
         script: |
-          github.log.info('test_value: ' + process.env.TEST_VALUE)
+          core.info(`repo: ${JSON.stringify(context.repo)}`)
+          core.info('test_value: ' + process.env.TEST_VALUE)
       env:
         TEST_VALUE: ${{ inputs.test_value }}
