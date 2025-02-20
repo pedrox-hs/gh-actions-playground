@@ -1,6 +1,7 @@
 name: On Repository Dispatch
 
 on:
+  # https://docs.github.com/pt/rest/repos/repos?apiVersion=2022-11-28#create-a-repository-dispatch-event
   repository_dispatch:
 
 jobs:
