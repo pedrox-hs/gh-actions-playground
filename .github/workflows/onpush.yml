@@ -7,7 +7,6 @@ on:
 
 jobs:
   on-push:
-    name: run-on-push
     runs-on: ubuntu-latest
     steps:
     - name: Dump GitHub context
