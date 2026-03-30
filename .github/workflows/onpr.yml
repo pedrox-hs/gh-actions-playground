@@ -2,6 +2,7 @@ name: On PR
 
 on:
   pull_request:
+    types: [ '**' ]
     branches: [ '**' ]
 
 jobs:
